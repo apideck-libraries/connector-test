@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hello operation should return a 200 response 1`] = `
+Object {
+  "body": Object {
+    "message": "Hello, world!",
+  },
+  "status": 200,
+}
+`;

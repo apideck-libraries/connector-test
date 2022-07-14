@@ -24,3 +24,10 @@ paths:
         "200":
           description: "Say foo"
           content: {}
+  /space/rockets/{rocketId}:
+    get:
+      operationId: rocketsOne
+      responses:
+        "200":
+          description: "Get a rocket"
+          content: {}

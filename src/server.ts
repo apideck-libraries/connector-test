@@ -1,11 +1,8 @@
 import path from "path";
 import chalk from "chalk";
 import express from "express";
-import { OpenAPI, OpenAPIV3 } from "openapi-types";
-import OpenApiParser from "@apidevtools/swagger-parser";
-
-import { OpenApiRouter } from "./OpenApiRouter";
 import { dispatch } from "./dispatch";
+import { getOpenApiRouter } from "utils/openApi";
 
 const PORT = 4444;
 
@@ -38,7 +35,7 @@ void (async () => {
         return;
       }
 
-      const result = dispatch(routerResult);
+      const result = await dispatch(routerResult);
 
       if (!result) {
         res.status(501).send({ message: "not implemented" });
@@ -75,18 +72,3 @@ void (async () => {
     );
   });
 })();
-
-async function getOpenApiRouter(specPath: string) {
-  let spec: OpenAPI.Document<{}> | undefined = undefined;
-  try {
-    spec = await OpenApiParser.bundle(specPath);
-  } catch (error) {
-    console.log(
-      chalk`{dim ${new Date()
-        .toTimeString()
-        .substring(0, 8)}} {magenta http} {red ERROR} Missing spec.`
-    );
-    return;
-  }
-  return new OpenApiRouter(spec as OpenAPIV3.Document);
-}

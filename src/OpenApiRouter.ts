@@ -1,3 +1,4 @@
+import _ from "lodash";
 import orderBy from "lodash/orderBy";
 import { OpenAPIV3 } from "openapi-types";
 
@@ -74,5 +75,30 @@ export class OpenApiRouter {
     }
 
     return null;
+  }
+
+  matchByOperationId(operationId: string): Route | null {
+    let results = this.paths.map((p) => {
+      const op = Object.entries(p.operations).find(
+        ([_, value]) => value.operationId === operationId
+      ) as OpenAPIV3.OperationObject | undefined;
+
+      return op
+        ? {
+            route: p.path,
+            operation: op,
+            pathParameters: {},
+          }
+        : null;
+    });
+
+    // strip falsy values
+    results = _.compact(results);
+
+    if (!results || results.length === 0) {
+      return null;
+    }
+
+    return results[0];
   }
 }

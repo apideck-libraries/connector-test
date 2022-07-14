@@ -7,10 +7,10 @@ export interface Result {
   headers?: Record<string, string>;
 }
 
-export const dispatch = (route: Route): Result | null => {
+export const dispatch = async (route: Route): Promise<Result | null> => {
   switch (route.operation.operationId) {
     case "hello":
-      return handleHello(route);
+      return await handleHello(route);
     default:
       return null;
   }
