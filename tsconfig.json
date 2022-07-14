@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es2019",
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "removeComments": true,
+    "noEmit": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    /* Strict Type-Checking Options */
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    /* Module Resolution Options */
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    /* Experimental Options */
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "paths": {
+      "*": ["./src/*", "./*"]
+    },
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules/**/*", ".vscode/**/*"]
+}
