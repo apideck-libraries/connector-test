@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node-dev --inspect --files -r tsconfig-paths/register -r dotenv/config --project ./tsconfig.json src/server.ts",
+    "api-docs": "npx @redocly/openapi-cli preview-docs spec.yml --port=4044",
     "test": "jest --"
   },
   "devDependencies": {
