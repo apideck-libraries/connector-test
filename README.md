@@ -4,7 +4,7 @@
 
 Today we are mapping a SpaceX rocket to a unified model.
 
-This application represents a Unified API with two configured endpoints:
+This application represents a [Unified API](https://blog.apideck.com/what-is-a-unified-api) with two configured endpoints:
 
 - GET `/hello`
 - GET `/space/rockets/{rocket-id}`
