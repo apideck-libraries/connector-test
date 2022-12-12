@@ -1,8 +1,8 @@
-import path from "path";
 import chalk from "chalk";
 import express from "express";
-import { dispatch } from "./dispatch";
+import path from "path";
 import { getOpenApiRouter } from "utils/openApi";
+import { dispatch } from "./dispatch";
 
 const PORT = 4444;
 
@@ -68,7 +68,7 @@ void (async () => {
         .substring(
           0,
           8
-        )}} {magenta Unify} {green READY} http://localhost:${PORT}`
+        )}} {magenta Unify} {green READY} http://localhost:${PORT}/hello`
     );
   });
 })();
