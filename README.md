@@ -22,4 +22,16 @@ In the end, we should be able to execute a GET call to retrieve the needed rocke
 
 Also make sure the company property is always uppercase.
 
+## Requirements
+
+- Avoid the use of `any`
+- Write tests
+- Introduce proper error handling
+- Ensure the API interaction is secure and efficiently handles possible errors or data inconsistencies.
+- Document the setup and usage instructions clearly
+
+BONUS: Test the implementation locally using tools like [Portman](https://github.com/apideck-libraries/portman).
+
+In the end, this is a simple test, so focus on code quality and don't hold back from going the extra mile. 
+
 Good luck!
