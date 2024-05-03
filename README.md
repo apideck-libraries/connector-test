@@ -22,7 +22,7 @@ In the end, we should be able to execute a GET call to retrieve the needed rocke
 
 Also make sure the company property is always uppercase.
 
-## Requirements
+## Requirements:
 
 - Avoid the use of `any`
 - Write tests
